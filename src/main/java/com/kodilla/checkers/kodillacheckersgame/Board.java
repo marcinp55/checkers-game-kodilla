@@ -25,4 +25,16 @@ public class Board {
             System.out.println("Wrong row/column number.");
         }
     }
+
+    @Override
+    public String toString() {
+        String board = "";
+
+        for (int i = 0;i < 8;i++) {
+            for (int j = 0;j < 8;j++) {
+               board = board + rows[i].getRowFigures()[j].getColor();
+            }
+        }
+        return board;
+    }
 }
