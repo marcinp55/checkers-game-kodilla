@@ -17,4 +17,12 @@ public class Board {
         }
         return foundFigure;
     }
+
+    public void setFigure(int row, int col, Figure figure) {
+        if ((row >= 1 && row <= 8) && (col >= 1 && col <= 8)) {
+            rows[row - 1].getRowFigures()[col - 1] = figure;
+        } else {
+            System.out.println("Wrong row/column number.");
+        }
+    }
 }
