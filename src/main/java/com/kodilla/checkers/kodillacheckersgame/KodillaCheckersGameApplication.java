@@ -1,52 +1,62 @@
 package com.kodilla.checkers.kodillacheckersgame;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
 public class KodillaCheckersGameApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(KodillaCheckersGameApplication.class, args);
+        Figure blackPawn1 = new Pawn("B");
+        Figure blackPawn2 = new Pawn("B");
+        Figure blackPawn3 = new Pawn("B");
+        Figure blackPawn4 = new Pawn("B");
+        Figure blackPawn5 = new Pawn("B");
+        Figure blackPawn6 = new Pawn("B");
+        Figure blackPawn7 = new Pawn("B");
+        Figure blackPawn8 = new Pawn("B");
+        Figure blackPawn9 = new Pawn("B");
+        Figure blackPawn10 = new Pawn("B");
+        Figure blackPawn11 = new Pawn("B");
+        Figure blackPawn12 = new Pawn("B");
 
-        Figure queen1 = new Queen("W");
-        Figure queen2 = new Queen("W");
-        Figure queen3 = new Queen("W");
-        Figure queen4 = new Queen("W");
-        Figure queen5 = new Queen("B");
-        Figure queen6 = new Queen("B");
-        Figure queen7 = new Queen("B");
-        Figure queen8 = new Queen("B");
-
-        Figure pawn1 = new Pawn("B");
-        Figure pawn2 = new Pawn("B");
-        Figure pawn3 = new Pawn("B");
-        Figure pawn4 = new Pawn("B");
-        Figure pawn5 = new Pawn("W");
-        Figure pawn6 = new Pawn("W");
-        Figure pawn7 = new Pawn("W");
-        Figure pawn8 = new Pawn("W");
+        Figure whitePawn1 = new Pawn("W");
+        Figure whitePawn2 = new Pawn("W");
+        Figure whitePawn3 = new Pawn("W");
+        Figure whitePawn4 = new Pawn("W");
+        Figure whitePawn5 = new Pawn("W");
+        Figure whitePawn6 = new Pawn("W");
+        Figure whitePawn7 = new Pawn("W");
+        Figure whitePawn8 = new Pawn("W");
+        Figure whitePawn9 = new Pawn("W");
+        Figure whitePawn10 = new Pawn("W");
+        Figure whitePawn11 = new Pawn("W");
+        Figure whitePawn12 = new Pawn("W");
 
         Board board1 = new Board();
 
-        board1.setFigure(1, 2, queen1);
-        board1.setFigure(2, 4, queen2);
-        board1.setFigure(3, 5, queen3);
-        board1.setFigure(4, 7, queen4);
-        board1.setFigure(5, 3, queen5);
-        board1.setFigure(6, 1, queen6);
-        board1.setFigure(7, 7, queen7);
-        board1.setFigure(8, 3, queen8);
+        board1.setFigure(1, 1, blackPawn1);
+        board1.setFigure(1, 3, blackPawn2);
+        board1.setFigure(1, 5, blackPawn3);
+        board1.setFigure(1, 7, blackPawn4);
+        board1.setFigure(2, 2, blackPawn5);
+        board1.setFigure(2, 4, blackPawn6);
+        board1.setFigure(2, 6, blackPawn7);
+        board1.setFigure(2, 8, blackPawn8);
+        board1.setFigure(3, 1, blackPawn9);
+        board1.setFigure(3, 3, blackPawn10);
+        board1.setFigure(3, 5, blackPawn11);
+        board1.setFigure(3, 7, blackPawn12);
 
-        board1.setFigure(1, 3, pawn1);
-        board1.setFigure(2, 8, pawn2);
-        board1.setFigure(3, 4, pawn3);
-        board1.setFigure(4, 5, pawn4);
-        board1.setFigure(5, 8, pawn5);
-        board1.setFigure(6, 5, pawn6);
-        board1.setFigure(7, 4, pawn7);
-        board1.setFigure(8, 8, pawn8);
+        board1.setFigure(8, 1, whitePawn1);
+        board1.setFigure(8, 3, whitePawn2);
+        board1.setFigure(8, 5, whitePawn3);
+        board1.setFigure(8, 7, whitePawn4);
+        board1.setFigure(7, 2, whitePawn5);
+        board1.setFigure(7, 4, whitePawn6);
+        board1.setFigure(7, 6, whitePawn7);
+        board1.setFigure(7, 8, whitePawn8);
+        board1.setFigure(6, 1, whitePawn9);
+        board1.setFigure(6, 3, whitePawn10);
+        board1.setFigure(6, 5, whitePawn11);
+        board1.setFigure(6, 7, whitePawn12);
 
-        board1.toString();
+        System.out.println(board1);
     }
 }

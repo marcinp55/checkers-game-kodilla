@@ -2,9 +2,14 @@ package com.kodilla.checkers.kodillacheckersgame;
 
 public class Board {
     private BoardRow[] rows;
+    private char[] boardLetters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
+    private int[] boardNumbers = {8, 7, 6, 5, 4, 3, 2, 1};
 
     public Board() {
         rows = new BoardRow[8];
+        for(int n=0; n<rows.length; n++) {
+            rows[n] = new BoardRow();
+        }
     }
 
     public Figure getFigure(int row, int col) {
@@ -28,12 +33,24 @@ public class Board {
 
     @Override
     public String toString() {
-        String board = "";
+        String board = "  -------------------------\n";
 
         for (int i = 0;i < 8;i++) {
+            board += boardNumbers[i];
+            board += " |";
             for (int j = 0;j < 8;j++) {
-               board = board + rows[i].getRowFigures()[j].getColor();
+                if (rows[i].getRowFigures()[j] instanceof None) {
+                    board += "  |";
+                } else {
+                    String s = rows[i].getRowFigures()[j] instanceof Pawn ? "P" : "Q";
+                    board = board + rows[i].getRowFigures()[j].getColor() + s + "|";
+                }
             }
+            board += "\n  -------------------------\n";
+        }
+        board += "  ";
+        for (int i = 0;i < boardLetters.length;i++) {
+            board += " " + boardLetters[i] + " ";
         }
         return board;
     }

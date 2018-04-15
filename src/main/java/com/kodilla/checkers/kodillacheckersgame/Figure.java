@@ -1,6 +1,6 @@
 package com.kodilla.checkers.kodillacheckersgame;
 
-public abstract class Figure {
+public class Figure {
     private String color;
 
     public Figure(String color) {
