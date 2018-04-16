@@ -58,5 +58,22 @@ public class KodillaCheckersGameApplication {
         board1.setFigure(6, 7, whitePawn12);
 
         System.out.println(board1);
+        board1.moveFigure(3, 1, 4, 2);
+        System.out.println("///////////////////////////////////////////////////////////////");
+
+        System.out.println(board1);
+        board1.moveFigure(6, 3, 5, 2);
+        System.out.println("///////////////////////////////////////////////////////////////");
+
+        System.out.println(board1);
+        board1.moveFigure(8, 1, 7, 2);
+        System.out.println("///////////////////////////////////////////////////////////////");
+
+        System.out.println(board1);
+        board1.moveFigure(9, 0, 4, 2);
+        System.out.println("///////////////////////////////////////////////////////////////");
+
+        board1.moveFigure(6, 5, 4, 8);
+        System.out.println(board1);
     }
 }

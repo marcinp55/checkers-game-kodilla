@@ -54,4 +54,40 @@ public class Board {
         }
         return board;
     }
+
+    public void moveFigure(int verticalPosOld, int horizontalPosOld, int verticalPosNew, int horizontalPosNew) {
+        //Check if not outside of the board
+        if ((verticalPosOld < 1 || verticalPosOld > 8) || (horizontalPosOld < 1 || horizontalPosOld > 8)) {
+            System.out.println("There are no figures outside of the board to move.");
+            return;
+        }
+
+        //Check if move is correct
+        Figure figureToMove = getFigure(verticalPosOld, horizontalPosOld);
+        if (figureToMove.getColor() == "W") {
+            if ((verticalPosNew != verticalPosOld - 1 && horizontalPosNew != horizontalPosOld - 1)
+                    || (verticalPosNew != verticalPosOld - 1 && horizontalPosNew != horizontalPosOld + 1)) {
+                System.out.println("Illegal move.");
+                return;
+            }
+        } else if (figureToMove.getColor() == "B") {
+            if ((verticalPosNew != verticalPosOld + 1 && horizontalPosNew != horizontalPosOld - 1)
+                    || (verticalPosNew != verticalPosOld + 1 && horizontalPosNew != horizontalPosOld + 1)) {
+                System.out.println("Illegal move.");
+                return;
+            }
+        }
+
+        //Check if space to move is free and move if yes
+            if (rows[verticalPosNew - 1].getRowFigures()[horizontalPosNew - 1] instanceof Pawn == false
+                    && rows[verticalPosNew - 1].getRowFigures()[horizontalPosNew - 1] instanceof Queen == false
+                    && (verticalPosNew >= 1 && verticalPosNew <= 8)
+                    && (horizontalPosNew >= 1 && horizontalPosNew <= 8)) {
+                rows[verticalPosOld - 1].getRowFigures()[horizontalPosOld - 1] = new None();
+                setFigure(verticalPosNew, horizontalPosNew, figureToMove);
+            } else {
+                System.out.println("You can't move here.");
+                return;
+            }
+    }
 }
